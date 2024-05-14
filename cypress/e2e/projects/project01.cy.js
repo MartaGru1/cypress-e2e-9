@@ -144,24 +144,20 @@ describe('Project01 - locating web elements, filling out forms with their input 
             //Select the “I give my consent to be contacted.” checkbox
             //Click on the “SUBMIT” button
             //Validate the form message “Thanks for submitting!” is displayed under the “SUBMIT” button
-            
-            cy.get('input[name="full_name"]').should('be.visible').then(() => {
-                cy.get('input[name="first_name"]').type('John')
-                cy.get('select[name="gender"]').select('Male')
-                cy.get('input[name="address"]').type('123 Main St')
-                cy.get('input[name="email"]').type('john@example.com')
-                cy.get('input[name="phone"]').type('123-456-7890')
-                cy.get('textarea[name="message"]').type('This is a test message')
-                cy.get('input[type="checkbox"]').check()
-                cy.get('button[type="submit"]').click()
-          
-                // Validate the form message "Thanks for submitting!" is displayed
-                cy.contains('Thanks for submitting!').should('be.visible')
-                });
-              
+    
+            cy.get(':nth-child(1) > .control > .input').type('Marta Grushkovsky')
+            cy.get('select[name="gender"]').select('Female');
+            cy.get('input[name="address"]').type('1234 Main St');
+            cy.get('input[name="email"]').type('marta@gmail.com');
+            cy.get('input[name="phone"]').type('123-456-7890');
+            cy.get('textarea[name="message"]').type('This is a test');
+            cy.get('input[type="checkbox"]').check();
+            cy.get('button[type="submit"]').click();
+            cy.contains('Thanks for submitting!').should('be.visible');
         });
-                  Cypress.on("uncaught:exception", () => {
+
+            Cypress.on("uncaught:exception", () => {
                     return false;
-                  });     
+            });     
              
 });
