@@ -203,7 +203,7 @@ describe("Assertions", () => {
     });
   });
 
-  it.only("each() - interacting with multiple web elements", () => {
+  it("each() - interacting with multiple web elements", () => {
     const arr = ["Hello World!", "I like automation testing!"];
 
     for (let i = 0; i < arr.length; i++) {
@@ -261,47 +261,48 @@ describe("Assertions", () => {
     //     throw new Error(`My error: ${switch_case} is missing `);
     //   }
     // }
-  });
 
-   /**
+    /**
      * 1. On the Html Elements page
      * 2. From the "Checkboxes" section, locate all checkboxes
      * 3. Validate their texts with expected text
      * 4. Validate checkboxes are visible, and enabled
      */
 
-   const exp = ['Apple', 'Microsoft', 'Tesla']
+    const exp = ["Apple", "Microsoft", "Tesla"];
 
-   cy.get('#checkbox-button-group div').each(($el, index) => {
+    cy.get("#checkbox-button-group div").each(($el, index) => {
+      cy.wrap($el).find("label").should("have.text", exp[index]);
+      // .parent().find('input').should('be.visible').and('be.enabled')
 
-     cy.wrap($el).find('label').should('have.text', exp[index])
-     // .parent().find('input').should('be.visible').and('be.enabled')
+      cy.wrap($el).find("input").should("be.visible").and("be.enabled");
+    });
+  });
 
-     cy.wrap($el).find('input').should('be.visible').and('be.enabled')
-   });
-
-   it('Assertion Practice', () => {
-
+  it.only("Assertion Practices", () => {
     /**
-     * /**
+     * 1. Go to https://techglobal-training.com/frontend
+     * 2. Navigate to 'Html Elements' card
+     *
      * 3. From the "Text Inputs" section
      * 4. Validate text input 1 and text input 2 is enabled
-     * 5. Validate text input 1 and text input 2 is is not required
+     * 5. Validate text input 1 and text input 2 is not required
      * 6. Enter your name and last name
      */
 
-    const names = ['Tech', 'Global'];
+    const names = ["Tech", "Global"];
 
-    cy.get('#text_input1, #tesxt_input2').each(($el) => {
-      cy.wrap($el).
-      type(names[index]).
-      should('be.enabled')
-      .and('not.have.attr', 'required')
+    cy.get("#text_input1, #text_input2").each(($el, index) => {
+      cy.wrap($el)
+        .type(names[index])
+        .should("be.enabled")
+        .and("not.have.attr", "required");
     });
-     /**
+
+    /**
      * 1. Go to https://techglobal-training.com/frontend
      * 2. Navigate to 'Html Elements' card
-     * 
+     *
      * 3. From the "Date Inputs" section
      * 4. Validate date input 1 and date input 2 is enabled
      * 5. Validate date input 1 and date input 2 is is not required
@@ -309,48 +310,41 @@ describe("Assertions", () => {
      * 7. Validate value is changed to given dates.
      */
 
-    const dates = ['2021-08-01', '2021-08-02']
+    const dates = ["11/11/2000", "11/11/2002"];
 
-    cy.get('#date_input1, #date_input2').each(($el, index) => {
-      cy.wrap($el).clear().type(`${dates[index]}{enter}`) // type(dates[index] +'{enter}')
-      .should('be.enabled')
-      .and('not.have.attr', 'required')
-      .and('have.value', dates[index])
+    cy.get("#date_input1, #date_input2").each(($el, index) => {
+      cy.wrap($el)
+        .clear()
+        .type(`${dates[index]}{enter}`) // type(dates[index] +'{enter}')
+        .should("have.value", dates[index])
+        .and("be.enabled")
+        .and("not.have.attr", "required");
     });
-/**
+
+    /**
      * 1. Go to https://techglobal-training.com/frontend
      * 2. Navigate to 'Html Elements' card
+     *
      * 3. From the "Dropdowns" section
      * 4. Validate dropdown 1 and dropdown 2 is enabled
      * 6. Enter Microsoft for dropdown 1 and Apple for dropdown 2
      * 7. Validate options are selected
      */
 
-    const dropdowns = ['Microsoft', 'Apple']
+    const dropdowns = ["Microsoft", "Apple"];
 
-    cy.get('#company_dropdown1, #company_dropdown2').each(($el, index) => {
-      cy.wrap($el).select(dropdowns[index])
-      .should('be.enabled')
-      .and('have.value', dropdowns[index])
-    });
-    /**
-     * Test Case: Validate Dropdowns Functionality on TechGlobal Training Page
-     * Go to https://techglobal-training.com/frontend
-     * Select the "Dropdowns" card
-     * Select the "MacBook Pro 13" option from the "Product" dropdown.
-     * Select the "Green" option from the "Color" dropdown.
-     * Open the "Shipping" dropdown and click on the "Delivery" option.
-     * Click on the "Submit" button.
-     * Validate result message displays "Your Green MacBook Pro 13 will be delivered to you."
-     */
-    describe("Homework", () => {
-      beforeEach(() => {
-        cy.visit("https://www.techglobal-training.com/frontend/");
-        cy.contains(".cards", "Dropdowns").click();
-      });
-  
+    cy.get("#company_dropdown1, #company_dropdown2").each(($el, index) => {
+      cy.wrap($el)
+        .select(dropdowns[index])
+        .should("be.enabled")
+        .and("have.value", dropdowns[index]);
     });
 
+    cy.get("#company_dropdown1, #company_dropdown2").each(($el, index) => {
+      cy.wrap($el)
+        .select(dropdowns[index])
+        .find("option:selected")
+        .should("have.text", dropdowns[index]);
+    });
+  });
 });
-
-
