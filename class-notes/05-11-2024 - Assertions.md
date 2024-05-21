@@ -26,3 +26,19 @@ ASSERTIONS:
 	- Implicit: Simply implicit assertions are the assertions using should() method. Specific thing about using this type of assertions is, it won't fail right away it waits for certain amount for condition to become true. So it has retry logic in it.
 
 	- Explicit: Assertions we do using expect(). These assertions don't come with automatic retries like the .should() method.
+
+
+/**
+* IMPORTANT NOTE
+*
+* Chainers like eq, includes SHOULD NOT be used against the web elements. Web elements comes as a direct object
+* and you must use 'have.text', 'include.text', or 'contain' as a chainer.
+*
+* eg:
+*
+* cy.get('#main_heading').should('eq', 'Html Elements') => WRONG
+* cy.get('#main_heading').should('includes', 'Html Elements') => WRONG
+*
+* cy.title().should('eq', 'TechGlobal Training | Html Elements') => TRUE
+*
+*/
