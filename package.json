@@ -6,7 +6,9 @@
     "test": "npx cypress run",
     "test:open": "npx cypress open",
     "test:config": "npm run test:specific -- --browser chrome --config viewportHeight=720,viewportWidth=1080 --headed",
-    "test:specific": "npx cypress run --spec \"cypress/e2e/integration/11-CustomCommands.cy.js\""
+    "test:specific": "npx cypress run --spec \"cypress/e2e/integration/11-CustomCommands.cy.js\"",
+    "test:multiple": "npx cypress run --env grepTags=\"@smoke @table\",grepFilterSpecs=true",
+    "test:smoke": "npx cypress run --env grepTags=@smoke,grepFilterSpecs=true"
   },
   "keywords": [],
   "author": "",
