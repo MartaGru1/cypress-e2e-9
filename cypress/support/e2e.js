@@ -17,6 +17,25 @@
 import './commands'
 import "cypress-real-events";
 import '@4tw/cypress-drag-drop'
+import 'cypress-mochawesome-reporter/register';
+import registerCypressGrep from '@cypress/grep/src/support'
+registerCypressGrep()
+const { exec } = require('child_process');
+
+
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+// before(() => {
+//   exec('npm run build')
+//   cy.exec('npm run build')
+// })
+
+beforeEach(() => {
+  cy.visit(`${Cypress.env('SITE_URL')}/frontend`);
+});
+
+// after(() => {
+//   exec('npm run close')
+// })

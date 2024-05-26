@@ -1,3 +1,5 @@
+/// <reference types="cypress"/>
+
 describe('Practice 02', () => {
     beforeEach(() => {
         cy.visit('https://techglobal-training.com/frontend/project-2');
