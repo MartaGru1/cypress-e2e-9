@@ -67,7 +67,7 @@ describe('Project 04', () => {
 
         cy.get('.toggle').click({ multiple: true })
 
-        cy.get('.has-text-danger.destroy').should('have.class', 'active')
+        cy.get('.has-text-danger.destroy').should('be.visible')
         cy.get('.has-text-danger.destroy').each($btn => {
             cy.wrap($btn).click();
         })
@@ -97,10 +97,12 @@ describe('Project 04', () => {
         });
 
         const searchItem = 'Task 2';
-        cy.get('input#search').type(searchItem );
+        toDoList.forEach(searchItem => {
+        cy.get('input#search').clear().type(searchItem );
+        }); 
 
         cy.get('.todo-item').should('have.length', 1).each(($el) => {
-            cy.wrap($el).should('contain', searchItem);
+            cy.wrap($el).first().should('contain', searchItem);
         });
 
     });
@@ -119,21 +121,21 @@ describe('Project 04', () => {
     
         cy.get('#add-btn').click();
         cy.get('.todo-item').should('not.exist');
-        cy.contains('No task found!');
+        cy.contains('No task found!').should('be.visible');
 
         const longItemName = 'Error: Todo cannot be more than 30 characters!';
-        cy.get('#input-add').type(longItemName);
+        cy.get('#input-add').clear().type(longItemName);
         cy.get('#add-btn').click();
 
-        cy.contains('Error: Todo cannot be more than 30 characters!');
+        cy.contains('Error: Todo cannot be more than 30 characters!').should('be.visible');
 
         const validItemName = 'Valid Item';
-        cy.get('#input-add').type(validItemName);
+        cy.get('#input-add').clear().type(validItemName);
         cy.get('#add-btn').click();
-        cy.get('.todo-item').should('have.length', 1);
-        cy.get('#input-add').type(validItemName);
+        cy.get('.todo-item').should('have.length', 1).and('have.text', validItemName);
+        cy.get('#input-add').clear().type(validItemName);
         cy.get('#add-btn').click();
-        cy.contains(`Error: You already have ${validItemName} in your todo list.`);
+        cy.contains(`Error: You already have ${validItemName} in your todo list.`).should('be.visible');
 
     });
 
