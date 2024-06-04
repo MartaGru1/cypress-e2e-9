@@ -1,4 +1,4 @@
-import { isFeature } from "@badeball/cypress-cucumber-preprocessor";
+/// <reference types="cypress" />
 
 describe('Project 04', () => {
 
