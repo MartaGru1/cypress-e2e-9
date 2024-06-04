@@ -1,4 +1,5 @@
 /// <reference types="cypress"/>
+/// <reference types="cypress"/>
 describe('Practice01 - Validate Google Home Page', () => {
     beforeEach(() => {
       cy.visit('https://www.google.com/');

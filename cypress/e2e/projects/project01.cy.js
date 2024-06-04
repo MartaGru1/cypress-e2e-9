@@ -50,27 +50,6 @@ describe('Project01 - locating web elements, filling out forms with their input 
             //Click on the “Male” option and validate it is selected while the others are not selected
             //Click on the “Female” option and validate it is selected while the others are not selected
 
-          //  cy.contains('label', 'Gender *').should('be.visible');
-            
-          //  cy.get('input[type="radio"]').should('have.attr', 'required');
-            
-          //  cy.get('input[type="radio"]').should('have.length', 3);
-          //  cy.contains('label.radio', 'Male').should('be.visible');
-          //  cy.contains('label.radio', 'Female').should('be.visible');
-          //  cy.contains('label.radio', 'Prefer not to disclose').should('be.visible');
-            
-          //  cy.get('input[type="radio"]').should('not.be.checked');
-            
-          //  cy.contains('label.radio', 'Male').click();
-          //  cy.contains('label.radio', 'Male').find('input[type="radio"]').should('be.checked');
-          //  cy.contains('label.radio', 'Female').find('input[type="radio"]').should('not.be.checked');
-          //  cy.contains('label.radio', 'Prefer not to disclose').find('input[type="radio"]').should('not.be.checked');
-            
-          //  cy.contains('label.radio', 'Female').click();
-          //  cy.contains('label.radio', 'Female').find('input[type="radio"]').should('be.checked');
-          //  cy.contains('label.radio', 'Male').find('input[type="radio"]').should('not.be.checked');
-          //  cy.contains('label.radio', 'Prefer not to disclose').find('input[type="radio"]').should('not.be.checked');
-
           cy.contains('Gender *').should('have.text', 'Gender *');
 
           const expectedText = ['Male', 'Female', 'Prefer not to disclose'];
@@ -105,11 +84,16 @@ describe('Project01 - locating web elements, filling out forms with their input 
         //Validate that the label of the Address input box is “Address”
         //Validate that the placeholder of the Address input box is “Enter your address*
 
-            cy.get('input[placeholder="Enter your address"]').should('be.visible')
+           cy.get('input[placeholder="Enter your address"]').should('be.visible')
             cy.get('input[placeholder="Enter your address"]').should('not.have.attr', 'required')
             cy.get('.field').contains('Address').should('exist')
             cy.get('input[placeholder="Enter your address"]').should('exist')
+
+
             
+
+
+
         });      
             
 
@@ -187,6 +171,7 @@ describe('Project01 - locating web elements, filling out forms with their input 
                 .and(test.required ? 'have.attr' : 'not.have.attr', 'required');
 
             });
+        });
 
 
         it('Test Case 08 - Validate the Consent checkbox', () => {
@@ -195,27 +180,26 @@ describe('Project01 - locating web elements, filling out forms with their input 
             //Validate that the label of the Message text area is “Message”
             //Validate that the placeholder of the Message text area is “Type your message here…”
 
-              //  cy.contains('I give my consent to be contacted.').should('exist')
-              //  cy.get('input[type="checkbox"]').should('have.attr', 'required')
-              //  cy.get('input[type="checkbox"]').should('be.enabled')
-              //  cy.get('input[type="checkbox"]').check().should('be.checked')
-              //  cy.get('input[type="checkbox"]').uncheck().should('not.be.checked')
-              
               cy.get('.checkbox').should('have.text', 'I give my consent to be contacted.');
 
-              cy.get('.checkbox > input').should('have.attr', 'required').and('be.enabled')
+              cy.get('.checkbox').then(($txt) => {
+                expect($txt.text().trim()).to.be.equal('I give my consent to be contacted.');
+
+              cy.get('.checkbox > input').should('be.enabled')
               .click().should('be.checked')
-              .click().should('not.be.enabled');
+              .click().should('not.be.checked')
+              .and('have.attr', 'required');
         });
+    });
 
         it('Test Case 09 - Validate the SUBMIT button', () => {
         //Validate the “SUBMIT” button is displayed
         //Validate the “SUBMIT” button is clickable
         //Validate that the button text is “SUBMIT”
 
-        cy.get('button[type="submit"]').should('be.visible');
-        cy.get('button[type="submit"]').should('not.be.disabled');
-        cy.get('button[type="submit"]').should('have.text', 'SUBMIT');
+        cy.get('.control > .button').should('be.visible')
+        .and('be.enabled')
+        .and('have.text', 'SUBMIT');
         });
 
         it('Test Case 10 - Validate the form submission', () => {
@@ -230,19 +214,27 @@ describe('Project01 - locating web elements, filling out forms with their input 
             //Validate the form message “Thanks for submitting!” is displayed under the “SUBMIT” button
     
             //cy.get(':nth-child(1) > .control > .input').type('Marta Grushkovsky')
-                  cy.get('input[placeholder="Enter your full name"]').type('Marta Grushkovsky')
-                  cy.contains('Female').click()
-                  cy.get('input[placeholder="Enter your address"]').type('1234 Chicago St')
-                  cy.get('input[placeholder="Enter your email"]').type('marta@gmail.com')
-                  cy.get('input[placeholder="Enter your phone number"]').type('123-456-7890')
-                  cy.get('textarea[placeholder="Type your message here..."]').type('This is a test')
-                  cy.contains('I give my consent to be contacted.').click()
-                  cy.get('button[type="submit"]').click()
-                  cy.contains('Thanks for submitting!').should('be.visible')
-              });
 
-            Cypress.on("uncaught:exception", () => {
-                    return false;
-            });     
+            cy.get('.control').find('input, textarea')
+            
+            const inputs = ['TechGlobal', '2800 S River Rd Suite 310, Des Plaines, IL 60018', 'info@techglobalschool.com', '(773) 257-3010', 'Hello World!'];
+
+            cy.get('.control').find('input, textarea').each(($ele, index) => {
+                cy.wrap($ele).type(inputs[index]);
+            });
+
+            cy.contains('label','Male').find('input').check();
+            cy.get('.checkbox').find('input').check();
+            cy.get('.control > .button').click();
+
+            cy.on('uncaught:exception', () => {
+                return false;
+            });
+
+            cy.get('.mt-5').should('have.text', 'Thanks for submitting!');
+
+        });
+
              
 });
+
