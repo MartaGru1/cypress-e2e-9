@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-30T00:44:02.366Z",
+    "end": "2024-05-30T00:44:12.120Z",
+    "duration": 9754,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "800e7578-68aa-4e99-82e6-a2b5300a3897",
+      "title": "",
+      "fullFile": "cypress\\e2e\\practices\\practice02.cy.js",
+      "file": "cypress\\e2e\\practices\\practice02.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3a78553f-5d96-4fa6-9dce-d1523f3f35d0",
+          "title": "Practice02 - Validate Amazon Home Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TASK-4: Validate the Google Amazon Footer Columns",
+              "fullTitle": "Practice02 - Validate Amazon Home Page TASK-4: Validate the Google Amazon Footer Columns",
+              "timedOut": null,
+              "duration": 9562,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\practices\\\\practice02.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\practices\\\\practice02.cy.js\\\\Practice02 - Validate Amazon Home Page -- TASK-4 Validate the Google Amazon Footer Columns (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "const columns = ['Get to Know Us', 'Make Money with Us', 'Amazon Payment Products', 'Let Us Help You'];\ncy.get('.navFooterColHead').each(($el, index) => {\n  cy.wrap($el).should('have.text', columns[index]);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.navFooterColHead`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.navFooterColHead`, but never found it.\n    at Context.eval (webpack://cypress-e2e-9/./cypress/e2e/practices/practice02.cy.js:35:8)",
+                "diff": null
+              },
+              "uuid": "918fda14-3459-4248-ab62-db69dac3fa9c",
+              "parentUUID": "3a78553f-5d96-4fa6-9dce-d1523f3f35d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "918fda14-3459-4248-ab62-db69dac3fa9c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9562,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-30T00:45:47.126Z",
+    "end": "2024-05-30T00:45:56.518Z",
+    "duration": 9392,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9e28f684-576b-433d-b54c-fce7da74baa6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\03-selectors.cy.js",
+      "file": "cypress\\e2e\\integration\\03-selectors.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2f3cefb0-b59c-4528-aedd-be1a379ad20a",
+          "title": "Cypress Selectors",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Practice Web Elements using - get and contains",
+              "fullTitle": "Cypress Selectors Practice Web Elements using - get and contains",
+              "timedOut": null,
+              "duration": 3990,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\03-selectors.cy.js\"\n}",
+              "code": "cy.get(\".CardGrids_CardGrids__qDdyI\").as(\"allCards\");\ncy.get(\"@allCards\");\n// Handling multiple elements\n// Returns the first element\ncy.get(\".cards\").first();\n// Returns the last element\ncy.get(\".cards\").last();\n// Targets the specific index of an element\ncy.get(\".cards\").eq(9);\n// Locates the web element by its visual text on the GUI\ncy.contains(\"Html Elements\");\n// This one tries to find element with \"Html Elements\" visual text inside the web element with .cards attribute\ncy.contains(\".cards\", \"Html Elements\");\n// This will do the same thing as above locator in more explicit way\n// It will look for card with 'Html Elements' visible text ONLY inside the class name '.CardGrids_CardGrids__qDdyI'\ncy.get(\"@allCards\").contains(\"Html Elements\");",
+              "err": {},
+              "uuid": "5b64542d-7c8e-4ae8-b140-964995295c97",
+              "parentUUID": "2f3cefb0-b59c-4528-aedd-be1a379ad20a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Practice Web Elements using - find",
+              "fullTitle": "Cypress Selectors Practice Web Elements using - find",
+              "timedOut": null,
+              "duration": 2029,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\03-selectors.cy.js\"\n}",
+              "code": "cy.contains(\".cards\", \"Html Elements\").click();\n// When we do this, we try to locate web element with \"Paragraph\" text inside the div container\ncy.get(\"div\").contains(\"Paragraph\");\ncy.get(\"#radio-button-group\").find(\"div\");\ncy.get(\"#radio-button-group div\");",
+              "err": {},
+              "uuid": "e7bb2750-8fd4-4772-a7d7-cb2d946f30f2",
+              "parentUUID": "2f3cefb0-b59c-4528-aedd-be1a379ad20a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Practice Web Elements using - Siblings, Parent and Child",
+              "fullTitle": "Cypress Selectors Practice Web Elements using - Siblings, Parent and Child",
+              "timedOut": null,
+              "duration": 3000,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\03-selectors.cy.js\"\n}",
+              "code": "cy.contains(\".cards\", \"Html Elements\").click();\n// next()   => locates the immediate next sibling of a web element\ncy.get(\"div\").contains(\"Paragraph\").next();\n// nextAll()   => locates the immediate next siblings of a web element\ncy.get(\"div\").contains(\"Paragraph\").nextAll();\n// prev()   => locates the immediate previous sibling of a web element\ncy.get(\"#testing_paragraph\").prev();\n// prevAll()   => locates the immediate previous sibling of a web element\ncy.get(\"#testing_paragraph\").prevAll();\n// Locates the immediate parent of a web element\ncy.get(\"#testing_paragraph\").parent();\n// Locates the all the parents of a web element\ncy.get(\"#testing_paragraph\").parents();\n// Locates until the specific parent\ncy.get(\"#testing_paragraph\").parentsUntil('.HtmlElements_mainContainer__Fpn6M');\ncy.get('[data-identifier=\"Paragraphs\"]').children();\ncy.get('#checkbox-button-group').next().find('div').first().children().find('input').parent().parent().parent().prev();",
+              "err": {},
+              "uuid": "a12d65e0-f116-4a8a-9fed-ba37fb7c3d69",
+              "parentUUID": "2f3cefb0-b59c-4528-aedd-be1a379ad20a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5b64542d-7c8e-4ae8-b140-964995295c97",
+            "e7bb2750-8fd4-4772-a7d7-cb2d946f30f2",
+            "a12d65e0-f116-4a8a-9fed-ba37fb7c3d69"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9019,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-30T00:48:47.992Z",
+    "end": "2024-05-30T00:48:58.161Z",
+    "duration": 10169,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e5b22894-320d-48e5-b627-c97d7296a3bc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\13-Degugging.cy.js",
+      "file": "cypress\\e2e\\integration\\13-Degugging.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3c460d31-5cc8-4264-b579-e4f40f085746",
+          "title": "Debugging",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.debug() - Debuggins use debug",
+              "fullTitle": "Debugging cy.debug() - Debuggins use debug",
+              "timedOut": null,
+              "duration": 9963,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\integration\\\\13-Degugging.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\integration\\\\13-Degugging.cy.js\\\\Debugging -- cy.debug() - Debuggins use debug (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(`${Cypress.env('SITE_URL')}/frontend`);\ncy.clickCard(\"Project - Login Function\");\ncy.get('#username').type(Cypress.env('UI_USERNAME'));\ncy.get('#password').type(Cypress.env('UI_PASSWORD'));\ncy.get('#login_btn').click();\ncy.get('#success_lgn').should('be.visible');\ncy.get('#dropdown-button').realHover();\ncy.debug();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#success_lgn`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#success_lgn`, but never found it.\n    at Context.eval (webpack://cypress-e2e-9/./cypress/e2e/integration/13-Degugging.cy.js:47:29)",
+                "diff": null
+              },
+              "uuid": "342a08b3-d8b2-47aa-b0d1-7d71228b4bff",
+              "parentUUID": "3c460d31-5cc8-4264-b579-e4f40f085746",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "342a08b3-d8b2-47aa-b0d1-7d71228b4bff"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9963,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

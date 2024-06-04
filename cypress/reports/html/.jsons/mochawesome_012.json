@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-30T00:47:26.769Z",
+    "end": "2024-05-30T00:47:45.287Z",
+    "duration": 18518,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4ba42ee1-417a-4ec5-bc3d-48f8313e945a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\09-AdvancedActions.cy.js",
+      "file": "cypress\\e2e\\integration\\09-AdvancedActions.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6cf59ac0-a662-47c5-a95d-83765ff72d56",
+          "title": "Keyboard & Mouse Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mouse Actions using Cypress events",
+              "fullTitle": "Keyboard & Mouse Actions Mouse Actions using Cypress events",
+              "timedOut": null,
+              "duration": 4762,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\09-AdvancedActions.cy.js\"\n}",
+              "code": "cy.get(\"#dropdown-button\").trigger(\"mouseover\");\ncy.get(\"#dropdown-button\").realHover();",
+              "err": {},
+              "uuid": "0177556d-4801-436c-a0dd-6053ea69a1c4",
+              "parentUUID": "6cf59ac0-a662-47c5-a95d-83765ff72d56",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Keyboard Actions",
+              "fullTitle": "Keyboard & Mouse Actions Keyboard Actions",
+              "timedOut": null,
+              "duration": 5662,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\09-AdvancedActions.cy.js\"\n}",
+              "code": "cy.visit(\"https://www.techglobal-training.com/frontend/\");\ncy.clickCard(\"Html Elements\");\ncy.get(\"#text_input1\").realClick().realPress(\"KeyA\").realPress(\"Tab\").realPress(\"KeyB\").realPress(\"ArrowLeft\").realPress(\"KeyR\").realPress(\"ArrowRight\").realPress(\"Backspace\").realPress([\"Alt\", \"KeyA\"]);",
+              "err": {},
+              "uuid": "963a1e4a-4176-486b-a4a9-5ffe594e25f0",
+              "parentUUID": "6cf59ac0-a662-47c5-a95d-83765ff72d56",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Right Click, and Double Click",
+              "fullTitle": "Keyboard & Mouse Actions Right Click, and Double Click",
+              "timedOut": null,
+              "duration": 3600,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\09-AdvancedActions.cy.js\"\n}",
+              "code": "cy.get('[id$=\"click\"]').as('buttons');\ncy.url().then(url => {\n  const actions = url.slice(url.lastIndexOf('/') + 1);\n  cy.log(actions);\n  cy.wrap(actions).should('eq', 'actions');\n});\ncy.get('@buttons').first().should('have.text', 'Click on me').click().next().should('have.text', 'You clicked on a button!');\ncy.get('@buttons').eq(1).should('have.text', 'Right-Click on me').rightclick().next().should('have.text', 'You right-clicked on a button!');\ncy.get('@buttons').last().should('have.text', 'Double-Click on me').dblclick().next().should('have.text', 'You double-clicked on a button!');",
+              "err": {},
+              "uuid": "e2acd07f-6ea9-4c68-8396-ebea851ff4d6",
+              "parentUUID": "6cf59ac0-a662-47c5-a95d-83765ff72d56",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Drag and Drop",
+              "fullTitle": "Keyboard & Mouse Actions Drag and Drop",
+              "timedOut": null,
+              "duration": 3918,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\09-AdvancedActions.cy.js\"\n}",
+              "code": "cy.get('#drag_element').drag('#drop_element');",
+              "err": {},
+              "uuid": "82a848b8-47ba-47e9-8d79-3419b3a00b1c",
+              "parentUUID": "6cf59ac0-a662-47c5-a95d-83765ff72d56",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0177556d-4801-436c-a0dd-6053ea69a1c4",
+            "963a1e4a-4176-486b-a4a9-5ffe594e25f0",
+            "e2acd07f-6ea9-4c68-8396-ebea851ff4d6",
+            "82a848b8-47ba-47e9-8d79-3419b3a00b1c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 17942,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-30T00:48:24.453Z",
+    "end": "2024-05-30T00:48:43.022Z",
+    "duration": 18569,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b39565bc-2785-4318-af64-e423a124c3ca",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\12-Timeouts.cy.js",
+      "file": "cypress\\e2e\\integration\\12-Timeouts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fac7028a-e206-4b20-9385-f354f55dabbe",
+          "title": "Timeouts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Explicit and Inline timeouts",
+              "fullTitle": "Timeouts Explicit and Inline timeouts",
+              "timedOut": null,
+              "duration": 4717,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\12-Timeouts.cy.js\"\n}",
+              "code": "cy.get('#main_heading', {\n  timeout: 5000\n});\ncy.get('#hello_paragraph', {\n  timeout: 5000\n}).click({\n  timeout: 10000\n});\ncy.get('#checkbox-button-group input').click({\n  multiple: true,\n  timeout: 10000\n});\n// npx cypress run --config defaultCommandTimeout=10000",
+              "err": {},
+              "uuid": "f4a0ec47-0198-4114-b0f5-71e1a736f3ff",
+              "parentUUID": "fac7028a-e206-4b20-9385-f354f55dabbe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Waits",
+              "fullTitle": "Timeouts Waits",
+              "timedOut": null,
+              "duration": 13560,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\12-Timeouts.cy.js\"\n}",
+              "code": "cy.visit(`${Cypress.env('SITE_URL')}/frontend`);\ncy.clickCard(\"Waits\");\ncy.get('#red').click();\ncy.get('.box', {\n  timeout: 10000\n}).should('be.visible');",
+              "err": {},
+              "uuid": "3053e990-dd54-4edf-8f31-5663000cdd4b",
+              "parentUUID": "fac7028a-e206-4b20-9385-f354f55dabbe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f4a0ec47-0198-4114-b0f5-71e1a736f3ff",
+            "3053e990-dd54-4edf-8f31-5663000cdd4b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 18277,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

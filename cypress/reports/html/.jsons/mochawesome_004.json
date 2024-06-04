@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-30T00:45:07.566Z",
+    "end": "2024-05-30T00:45:18.778Z",
+    "duration": 11212,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a0c754ab-206a-4088-bd52-3cc6f17debd1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\01-FistTests.cy.js",
+      "file": "cypress\\e2e\\integration\\01-FistTests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "595a7011-dcd3-4de8-a027-02efafa7eab4",
+          "title": "My First Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visit TechGlobal trainnig app home page",
+              "fullTitle": "My First Tests Visit TechGlobal trainnig app home page",
+              "timedOut": null,
+              "duration": 8276,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\01-FistTests.cy.js\"\n}",
+              "code": "cy.visit(\"https://www.techglobal-training.com/\");\ncy.reload(); // Command to refresh your current url\ncy.visit(\"/frontend\");\n// Navigate back on the web page\n// cy.go('back')\ncy.go(-1);\n// Navigate frorward on the web page\n// cy.go('forward')\ncy.go(1);\ncy.go(-1);\ncy.title().should(\"eq\", \"TechGlobal Training | Home\");\ncy.url().should(\"contain\", \"techglobal-training\");",
+              "err": {},
+              "uuid": "40c47990-120d-4ba3-9f58-46f8c722442f",
+              "parentUUID": "595a7011-dcd3-4de8-a027-02efafa7eab4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "My Myrst Test",
+              "fullTitle": "My First Tests My Myrst Test",
+              "timedOut": null,
+              "duration": 2611,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\01-FistTests.cy.js\"\n}",
+              "code": "// expect(true).to.equal(false)\ncy.visit(\"https://www.techglobal-training.com/\");\ncy.get('#logo').click().should('be.visible');\n// cy.get('#logo').should('be.visible')",
+              "err": {},
+              "uuid": "02ca9562-100b-476a-a106-e2894e6d11cc",
+              "parentUUID": "595a7011-dcd3-4de8-a027-02efafa7eab4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "40c47990-120d-4ba3-9f58-46f8c722442f",
+            "02ca9562-100b-476a-a106-e2894e6d11cc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10887,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

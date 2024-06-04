@@ -1,0 +1,172 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-30T00:43:15.251Z",
+    "end": "2024-05-30T00:43:55.709Z",
+    "duration": 40458,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ae4c63c9-8bf6-4ef1-93fb-ff5027efc7f6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\practices\\practice01.cy.js",
+      "file": "cypress\\e2e\\practices\\practice01.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4a770141-3003-46ea-b253-ab36613fbdef",
+          "title": "Practice01 - Validate Google Home Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TASK-1: Validate the Google Home Page Title and URL",
+              "fullTitle": "Practice01 - Validate Google Home Page TASK-1: Validate the Google Home Page Title and URL",
+              "timedOut": null,
+              "duration": 6422,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\practices\\\\practice01.cy.js\"\n}",
+              "code": "// Validate that the title of the page is \"Google\"\n// Validate that the URL of the page is https://www.google.com/\ncy.title().should('eq', 'Google');\ncy.url().should('eq', 'https://www.google.com/');",
+              "err": {},
+              "uuid": "54dd9bf0-c492-4ff6-8d78-7955e09469b3",
+              "parentUUID": "4a770141-3003-46ea-b253-ab36613fbdef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TASK-2:Validate the Google Logo Presence",
+              "fullTitle": "Practice01 - Validate Google Home Page TASK-2:Validate the Google Logo Presence",
+              "timedOut": null,
+              "duration": 9632,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\practices\\\\practice01.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\practices\\\\practice01.cy.js\\\\Practice01 - Validate Google Home Page -- TASK-2Validate the Google Logo Presence (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// Validate that the Google Logo is present on the page\ncy.get('img[alt=\"Google\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `img[alt=\"Google\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `img[alt=\"Google\"]`, but never found it.\n    at Context.eval (webpack://cypress-e2e-9/./cypress/e2e/practices/practice01.cy.js:18:36)",
+                "diff": null
+              },
+              "uuid": "fe8c1c52-4374-4434-8522-71e650ed7852",
+              "parentUUID": "4a770141-3003-46ea-b253-ab36613fbdef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TASK-3: Validate the Google Search Results",
+              "fullTitle": "Practice01 - Validate Google Home Page TASK-3: Validate the Google Search Results",
+              "timedOut": null,
+              "duration": 9778,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\practices\\\\practice01.cy.js\"\n}",
+              "code": "//Search for \"Cypress\" in the search bar\n// Validate that result statistics show more than zero results\ncy.get('#APjFqb').type('Cypress{enter}');",
+              "err": {},
+              "uuid": "6aa4da76-2bde-4b39-adf6-41cdc7073584",
+              "parentUUID": "4a770141-3003-46ea-b253-ab36613fbdef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TASK-4: Validate the Google Search Autocomplete Suggestions",
+              "fullTitle": "Practice01 - Validate Google Home Page TASK-4: Validate the Google Search Autocomplete Suggestions",
+              "timedOut": null,
+              "duration": 13553,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\practices\\\\practice01.cy.js\"\n}",
+              "code": "// Search for \"Artificial Intelligence\" in the search bar\n// Validate that autocomplete suggestions are present – more than zero\n// Click on the first autocomplete suggestion\n// Validate that the URL of the page contains \"q=artificial+intelligence\" – ignore cases\ncy.get('#APjFqb').type('Artificial Intelligence');\ncy.get('#jZ2SBf > .wM6W7d > span').click();\ncy.url().should(\"include\", \"q=artificial+intelligence\");",
+              "err": {},
+              "uuid": "59a96abf-8c92-4e66-ab35-c73b72f9313f",
+              "parentUUID": "4a770141-3003-46ea-b253-ab36613fbdef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "54dd9bf0-c492-4ff6-8d78-7955e09469b3",
+            "6aa4da76-2bde-4b39-adf6-41cdc7073584",
+            "59a96abf-8c92-4e66-ab35-c73b72f9313f"
+          ],
+          "failures": [
+            "fe8c1c52-4374-4434-8522-71e650ed7852"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 39385,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

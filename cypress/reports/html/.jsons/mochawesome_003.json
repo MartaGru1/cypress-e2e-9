@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-05-30T00:44:38.889Z",
+    "end": "2024-05-30T00:45:01.639Z",
+    "duration": 22750,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "600b08d7-0e1a-4517-afc4-d2735b1e971a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\projects\\project03.cy.js",
+      "file": "cypress\\e2e\\projects\\project03.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+          "title": "Project 03",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 01 - Validate the default Book your trip form",
+              "fullTitle": "Project 03 Test Case 01 - Validate the default Book your trip form",
+              "timedOut": null,
+              "duration": 3946,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\projects\\\\project03.cy.js\"\n}",
+              "code": "/**\n* Validate that the “One way” radio button is displayed enabled and selected by default\n* Validate that the “Round trip” radio button is displayed enabled and not selected by default\n* Validate that the “Cabin Class” label and dropdown are displayed\n* Validate that the “From” label and dropdown are displayed\n* Validate that the “To” label and dropdown are displayed\n* Validate that the “Depart” label and date picker is displayed\n* Validate that the “Return” label and date picker is displayed and disabled\n* Validate that the “Number of passengers” label and dropdown are displayed and 1 is the default\n* Validate that the “Passenger 1” category label and dropdown are displayed and “Adult (16-64)” is the default\n* Validate that the “BOOK” button is displayed and enabled\n */\ncy.get('input[type=\"radio\"][value=\"One way\"]').should('be.visible').and('be.enabled').and('be.checked');\ncy.get('input[type=\"radio\"][value=\"Round trip\"]').should('be.visible').and('be.enabled').and('not.be.checked');\ncy.contains('label', 'Cabin Class').should('be.visible');\ncy.get('label:contains(\"Cabin Class\") + .select select').should('be.visible');\ncy.contains('label', 'From').should('be.visible');\ncy.get('label:contains(\"From\") + .select select').should('be.visible');\ncy.contains('label', 'To').should('be.visible');\ncy.get('label:contains(\"To\") + .select select').should('be.visible');\ncy.contains('label', 'Depart').should('be.visible');\ncy.get('label:contains(\"Depart\") + .control .react-datepicker__input-container input').should('be.visible');\ncy.contains('label', 'Return').should('be.visible');\ncy.get('label:contains(\"Return\") + .control .react-datepicker__input-container input').should('be.visible').and('be.disabled');\ncy.contains('label', 'Number of passengers').should('be.visible');\ncy.get('label:contains(\"Number of passengers\") + .select select').should('be.visible').find('option:selected').should('have.value', '1');\ncy.contains('label', 'Passenger 1').should('be.visible');\ncy.get('label:contains(\"Passenger 1\") + .select select').should('be.visible').find('option:selected').should('contain.text', 'Adult (16-64)');\ncy.contains('button', 'BOOK').should('be.visible').and('be.enabled');",
+              "err": {},
+              "uuid": "e44f8df5-c850-4d4d-8bab-ac36a5383300",
+              "parentUUID": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case 02 - Validate the Book your trip form when Round trip is selected",
+              "fullTitle": "Project 03 Test Case 02 - Validate the Book your trip form when Round trip is selected",
+              "timedOut": null,
+              "duration": 3247,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\projects\\\\project03.cy.js\"\n}",
+              "code": "/**\n* Click on the “Round trip” radio button and validate it is selected\n* Validate that the “One way” radio button is not selected\n* Validate that the “Cabin Class” label and dropdown are displayed\n* Validate that the “From” label and dropdown are displayed\n* Validate that the “To” label and dropdown are displayed\n* Validate that the “Depart” label and date picker is displayed\n* Validate that the “Return” label and date picker is displayed\n* Validate that the “Number of passengers” label and dropdown are displayed and 1 is the default\n* Validate that the “Passenger 1” label and dropdown are displayed and “Adult (16-64)” is the default\n* Validate that the “BOOK” button is displayed and enabled\n */\ncy.get('input[type=\"radio\"][value=\"Round trip\"]').click().should('be.checked');\ncy.get('input[type=\"radio\"][value=\"One way\"]').should('not.be.checked');\ncy.contains('label', 'Cabin Class').should('be.visible');\ncy.get('label:contains(\"Cabin Class\") + .select select').should('be.visible');\ncy.contains('label', 'From').should('be.visible');\ncy.get('label:contains(\"From\") + .select select').should('be.visible');\ncy.contains('label', 'To').should('be.visible');\ncy.get('label:contains(\"To\") + .select select').should('be.visible');\ncy.contains('label', 'Depart').should('be.visible');\ncy.get('label:contains(\"Depart\") + .control .react-datepicker__input-container input').should('be.visible');\ncy.contains('label', 'Return').should('be.visible');\ncy.get('label:contains(\"Return\") + .control .react-datepicker__input-container input').should('be.visible');\ncy.contains('label', 'Number of passengers').should('be.visible');\ncy.get('label:contains(\"Number of passengers\") + .select select').should('be.visible').find('option:selected').should('have.value', '1');\ncy.contains('label', 'Passenger 1').should('be.visible');\ncy.get('label:contains(\"Passenger 1\") + .select select').should('be.visible').find('option:selected').should('contain.text', 'Adult (16-64)');\ncy.contains('button', 'BOOK').should('be.visible').and('be.enabled');",
+              "err": {},
+              "uuid": "e1154acf-6bd6-4e64-840c-c77839bc00a8",
+              "parentUUID": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case 03 - Validate the booking for 1 passenger ond one way",
+              "fullTitle": "Project 03 Test Case 03 - Validate the booking for 1 passenger ond one way",
+              "timedOut": null,
+              "duration": 4370,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\projects\\\\project03.cy.js\"\n}",
+              "code": "/**\n* Select the “One way” radio button\n* Select “Business” for the “Cabin Class” dropdown\n* Select “Illinois” for the “From” dropdown\n* Select “Florida” for the “To” dropdown\n* Select the next week for the ”Depart”\n* Select “1” for the “Number of passengers” dropdown\n* Select “Senior (65+)” for the Passenger 1 dropdown\n* Click on the “BOOK” button\n* Validate the booking information displayed below\n* DEPART\n* IL to FL\n* {dynamic date}\n* Number of passengers: 1\n* Passenger 1: Senior (65+)\n* Cabin Class: Business\n */\ncy.get('input[type=\"radio\"][value=\"One way\"]').click().should('be.checked');\ncy.contains('label', 'Cabin Class').next().find('select').select('Business');\ncy.contains('label', 'From').next().find('select').select('IL');\ncy.contains('label', 'To').next().find('select').select('FL');\nconst nextWeek = new Date();\nnextWeek.setDate(nextWeek.getDate() + 7);\nconst formattedNextWeek = nextWeek.toISOString().slice(0, 10);\ncy.contains('label', 'Depart').next().find('input').then($input => {\n  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;\n  nativeInputValueSetter.call($input[0], formattedNextWeek);\n  $input[0].dispatchEvent(new Event('input', {\n    bubbles: true\n  }));\n});\ncy.contains('label', 'Number of passengers').next().find('select').select('1');\ncy.contains('label', 'Passenger 1').next().find('select').select('Senior (65+)');\ncy.contains('button', 'BOOK').click();\ncy.contains('h1', 'DEPART').should('be.visible');\ncy.contains('h3', 'IL to FL').should('be.visible');\ncy.contains('p', 'Number of Passengers: 1').should('be.visible');\ncy.contains('p', 'Passenger 1: Senior (65+)').should('be.visible');\ncy.contains('p', 'Cabin class: Business').should('be.visible');",
+              "err": {},
+              "uuid": "ddbe35b2-c2cf-4e06-8a10-fc4189b4f2c4",
+              "parentUUID": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case 04 - Validate the booking for 1 passenger and round trip",
+              "fullTitle": "Project 03 Test Case 04 - Validate the booking for 1 passenger and round trip",
+              "timedOut": null,
+              "duration": 5008,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\projects\\\\project03.cy.js\"\n}",
+              "code": "/**\n* Select the “Round trip” radio button\n* Select “First” for the “Cabin Class” dropdown\n* Select “California” for the “From” dropdown\n* Select “Illinois” for the “To” dropdown\n* Select the next week for the ”Depart”\n* Select the next month for the “Return”\n* Select “1” for the “Number of passengers” dropdown\n* Select “Adult (16-64)” for the Passenger 1 dropdown\n* Click on the “BOOK” button\n* Validate the booking information displayed below\n* DEPART\n* CA to IL\n* {dynamic date}\n* Number of passengers: 1\n* Passenger 1: Adult (16-64)\n* Cabin Class: First\n     * RETURN\n* IL to CA\n* {dynamic date}\n */\ncy.get('input[type=\"radio\"][value=\"Round trip\"]').click().should('be.checked');\ncy.contains('label', 'Cabin Class').next().find('select').select('First');\ncy.contains('label', 'From').next().find('select').select('CA');\ncy.contains('label', 'To').next().find('select').select('IL');\nconst nextWeek = new Date();\nnextWeek.setDate(nextWeek.getDate() + 7);\nconst departDate = `${nextWeek.getMonth() + 1}/${nextWeek.getDate()}/${nextWeek.getFullYear()}`;\nconst nextMonth = new Date();\nnextMonth.setMonth(nextMonth.getMonth() + 1);\nconst returnDate = `${nextMonth.getMonth() + 1}/${nextWeek.getDate()}/${nextMonth.getFullYear()}`;\ncy.contains('label', 'Depart').next().find('input').then($input => {\n  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;\n  nativeInputValueSetter.call($input[0], departDate);\n  $input[0].dispatchEvent(new Event('input', {\n    bubbles: true\n  }));\n});\ncy.contains('label', 'Return').next().find('input').then($input => {\n  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;\n  nativeInputValueSetter.call($input[0], returnDate);\n  $input[0].dispatchEvent(new Event('input', {\n    bubbles: true\n  }));\n});\ncy.contains('label', 'Number of passengers').next().find('select').select('1');\ncy.contains('label', 'Passenger 1').next().find('select').select('Adult (16-64)');\ncy.contains('button', 'BOOK').click();\ncy.contains('h1', 'DEPART').should('be.visible');\ncy.contains('h3', 'CA to IL').should('be.visible');\ncy.contains('p', 'Number of Passengers: 1').should('be.visible');\ncy.contains('p', 'Passenger 1: Adult (16-64)').should('be.visible');\ncy.contains('p', 'Cabin class: First').should('be.visible');\ncy.contains('h1', 'RETURN').should('be.visible');\ncy.contains('h3', 'IL to CA').should('be.visible');",
+              "err": {},
+              "uuid": "0bc5f91d-00cd-439c-9f6b-77340a595431",
+              "parentUUID": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case 05 - Validate the booking fir 2 passengers and one way",
+              "fullTitle": "Project 03 Test Case 05 - Validate the booking fir 2 passengers and one way",
+              "timedOut": null,
+              "duration": 5077,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\projects\\\\project03.cy.js\"\n}",
+              "code": "/**\n* Select the “One way” radio button\n* Select “Premium Economy” for the “Cabin Class” dropdown\n* Select “New York” for the “From” dropdown\n* Select “Texas” for the “To” dropdown\n* Select the next day for the ”Depart”\n* Select “2” for the “Number of passengers” dropdown\n* Select “Adult (16-64)” for the Passenger 1 dropdown\n* Select “Child (2-11)” for the Passenger 2 dropdown\n* Click on the “BOOK” button\n* Validate the booking information displayed below\n* DEPART\n* NY to TX\n* {dynamic date}\n* Number of passengers: 2\n* Passenger 1: Adult (16-64)\n* Passenger 2: Child (2-11)\n* Cabin Class: Premium Economy\n */\ncy.get('input[type=\"radio\"][value=\"One way\"]').click().should('be.checked');\ncy.contains('label', 'Cabin Class').next().find('select').select('Premium Economy');\ncy.contains('label', 'From').next().find('select').select('NY');\ncy.contains('label', 'To').next().find('select').select('TX');\nconst nextDay = new Date();\nnextDay.setDate(nextDay.getDate() + 1);\nconst departDate = `${nextDay.getMonth() + 1}/${nextDay.getDate()}/${nextDay.getFullYear()}`;\ncy.contains('label', 'Depart').next().find('input').then($input => {\n  const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;\n  nativeInputValueSetter.call($input[0], departDate);\n  $input[0].dispatchEvent(new Event('input', {\n    bubbles: true\n  }));\n});\ncy.contains('label', 'Number of passengers').next().find('select').select('2');\ncy.contains('label', 'Passenger 1').next().find('select').select('Adult (16-64)');\ncy.contains('label', 'Passenger 2').next().find('select').select('Child (2-11)');\ncy.contains('button', 'BOOK').click();\ncy.contains('h1', 'DEPART').should('be.visible');\ncy.contains('h3', 'NY to TX').should('be.visible');\ncy.contains('p', 'Number of Passengers: 2').should('be.visible');\ncy.contains('p', 'Passenger 1: Adult (16-64)').should('be.visible');\ncy.contains('p', 'Passenger 2: Child (2-11)').should('be.visible');\ncy.contains('p', 'Cabin class: Premium Economy').should('be.visible');",
+              "err": {},
+              "uuid": "028531a6-9c7a-41d4-acac-960e01376f7d",
+              "parentUUID": "a8c3ee83-37b9-4879-b83a-1d01570e704a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e44f8df5-c850-4d4d-8bab-ac36a5383300",
+            "e1154acf-6bd6-4e64-840c-c77839bc00a8",
+            "ddbe35b2-c2cf-4e06-8a10-fc4189b4f2c4",
+            "0bc5f91d-00cd-439c-9f6b-77340a595431",
+            "028531a6-9c7a-41d4-acac-960e01376f7d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21648,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-30T00:46:44.042Z",
+    "end": "2024-05-30T00:47:04.789Z",
+    "duration": 20747,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "201ea8d2-53c4-41da-8b66-0b27ccdfaa24",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\07-multipleTabs.cy.js",
+      "file": "cypress\\e2e\\integration\\07-multipleTabs.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "09962cb2-dc81-48e4-9481-19b76f16612c",
+          "title": "Handling iFrames",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "iFrame",
+              "fullTitle": "Handling iFrames iFrame",
+              "timedOut": null,
+              "duration": 9150,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\integration\\\\07-multipleTabs.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\integration\\\\07-multipleTabs.cy.js\\\\Handling iFrames -- iFrame (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.get(\"#microsoft\").should(\"have.attr\", \"target\", \"_blank\");\ncy.get(\"#microsoft\").invoke(\"removeAttr\", \"target\").click();\ncy.url().should(\"contains\", \"microsoft\");",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > awa is not defined\n\nThis error was thrown by a cross origin page. If you wish to suppress this error you will have to use the cy.origin command to handle the error prior to visiting the page.\n\n`cy.origin('https://www.microsoft.com', () => {`\n`  cy.on('uncaught:exception', (e) => {`\n`    if (e.message.includes('Things went bad')) {`\n`      // we expected this error, so let's ignore it`\n`      // and let the test continue`\n`      return false`\n`    }`\n`  })`\n`})`\n`cy.visit('https://www.microsoft.com/')`\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/origin",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > awa is not defined\n\nThis error was thrown by a cross origin page. If you wish to suppress this error you will have to use the cy.origin command to handle the error prior to visiting the page.\n\n`cy.origin('https://www.microsoft.com', () => {`\n`  cy.on('uncaught:exception', (e) => {`\n`    if (e.message.includes('Things went bad')) {`\n`      // we expected this error, so let's ignore it`\n`      // and let the test continue`\n`      return false`\n`    }`\n`  })`\n`})`\n`cy.visit('https://www.microsoft.com/')`\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/origin\n    at cypressErr (https://techglobal-training.com/__cypress/runner/cypress_runner.js:75611:18)\n    at Object.errByPath (https://techglobal-training.com/__cypress/runner/cypress_runner.js:75666:10)\n    at PrimaryOriginCommunicator.<anonymous> (https://techglobal-training.com/__cypress/runner/cypress_runner.js:169330:72)\n    at PrimaryOriginCommunicator.emit (https://techglobal-training.com/__cypress/runner/cypress_runner.js:146159:5)\n    at PrimaryOriginCommunicator.onMessage (https://techglobal-training.com/__cypress/runner/cypress_runner.js:168650:12)\n    at crossOriginOnMessageRef (https://techglobal-training.com/__/assets/index-fdf6f8ab.js:146358:72)",
+                "diff": null
+              },
+              "uuid": "b0f72708-5ab8-4e7f-847c-09e6402c654d",
+              "parentUUID": "09962cb2-dc81-48e4-9481-19b76f16612c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test Case",
+              "fullTitle": "Handling iFrames Test Case",
+              "timedOut": null,
+              "duration": 11181,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\07-multipleTabs.cy.js\"\n}",
+              "code": "cy.contains('Apple').invoke('removeAttr', 'target').click();\ncy.title().should('eq', 'Apple');\ncy.go(-1);\ncy.title().then(el => {\n  cy.wrap(el.toLowerCase()).should('contain', 'techglobal');\n});",
+              "err": {},
+              "uuid": "dfd62d8a-6926-4b99-ac23-42268cedcce4",
+              "parentUUID": "09962cb2-dc81-48e4-9481-19b76f16612c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dfd62d8a-6926-4b99-ac23-42268cedcce4"
+          ],
+          "failures": [
+            "b0f72708-5ab8-4e7f-847c-09e6402c654d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20331,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

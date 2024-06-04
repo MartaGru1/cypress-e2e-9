@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-30T00:47:10.232Z",
+    "end": "2024-05-30T00:47:20.870Z",
+    "duration": 10638,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e8ce5f9b-77b8-4850-aea1-9ffde92819a6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\08-alerts.cy.js",
+      "file": "cypress\\e2e\\integration\\08-alerts.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6de5797b-81c6-4ba1-b22e-aa31a34ce211",
+          "title": "Handling Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handling the Warning Alert",
+              "fullTitle": "Handling Alerts Handling the Warning Alert",
+              "timedOut": null,
+              "duration": 4777,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\08-alerts.cy.js\"\n}",
+              "code": "cy.on(\"window:alert\", str => {\n  console.log(`My warning alert text content is: ${str}`);\n  expect(str).equal(\"You are on TechGlobal Training application.\");\n});\ncy.get(\"#warning_alert\").click();",
+              "err": {},
+              "uuid": "17a94354-4bf6-4d87-a1eb-b7a82a5f5a1e",
+              "parentUUID": "6de5797b-81c6-4ba1-b22e-aa31a34ce211",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handling the Confirmation Alert",
+              "fullTitle": "Handling Alerts Handling the Confirmation Alert",
+              "timedOut": null,
+              "duration": 2831,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\integration\\\\08-alerts.cy.js\"\n}",
+              "code": "cy.get(\"#confirmation_alert\").click();\ncy.once(\"window:confirm\", str => {\n  expect(str).equal(\"Would you like to stay on TechGlobal Training application?\");\n  return false;\n});\ncy.get(\"#action\").should(\"have.text\", \"You rejected the alert by clicking Cancel.\");\ncy.get(\"#confirmation_alert\").click();",
+              "err": {},
+              "uuid": "05e6d1d4-ecfc-4f6b-98e5-3f304b20b9e8",
+              "parentUUID": "6de5797b-81c6-4ba1-b22e-aa31a34ce211",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handling Prompt Alert",
+              "fullTitle": "Handling Alerts Handling Prompt Alert",
+              "timedOut": null,
+              "duration": 2757,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\integration\\\\08-alerts.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\integration\\\\08-alerts.cy.js\\\\Handling Alerts -- Handling Prompt Alert (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// cy.window().then((win) => {\n//   cy.stub(win, 'prompt').returns(null)\n// })\n// cy.window().then((win) => {\n//   cy.stub(win, \"prompt\")\n//   return false\n// });\n// cy.window().then((win) => {\n//   cy.stub(win, \"prompt\").returns('TechGlobal school message');\n// });\ncy.window().then(win => {\n  cy.stub(win, \"prompt\").callsFake(message => {\n    console.log(message);\n    expect(message).equal('What would you like to say to TechGlobal?');\n    return 'My Message';\n  });\n  cy.spy(win, '');\n});\ncy.get(\"#prompt_alert\").click();",
+              "err": {
+                "message": "TypeError: Attempted to wrap prompt which is already wrapped",
+                "estack": "TypeError: Attempted to wrap prompt which is already wrapped\n    at checkWrappedMethod (https://techglobal-training.com/__cypress/runner/cypress_runner.js:54080:21)\n    at wrapMethod (https://techglobal-training.com/__cypress/runner/cypress_runner.js:54128:13)\n    at spy (https://techglobal-training.com/__cypress/runner/cypress_runner.js:53944:16)\n    at <unknown> (https://techglobal-training.com/__cypress/runner/cypress_runner.js:54021:17)\n    at <unknown> (https://techglobal-training.com/__cypress/runner/cypress_runner.js:44997:22)\n    at Array.forEach (<anonymous>)\n    at walkInternal (https://techglobal-training.com/__cypress/runner/cypress_runner.js:44993:5)\n    at walk (https://techglobal-training.com/__cypress/runner/cypress_runner.js:45018:12)\n    at walkObject (https://techglobal-training.com/__cypress/runner/cypress_runner.js:54006:5)\n    at Function.spy (https://techglobal-training.com/__cypress/runner/cypress_runner.js:53934:16)\n    at Sandbox.spy (https://techglobal-training.com/__cypress/runner/cypress_runner.js:44847:35)\n    at Context.spy (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118067:28)\n    at cy.<computed> [as spy] (https://techglobal-training.com/__cypress/runner/cypress_runner.js:137997:17)\n    at getRet (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118808:20)\n    at tryCatcher (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://techglobal-training.com/__cypress/runner/cypress_runner.js:4315:29)\n    at Context.thenFn (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118819:66)\n    at Context.then (https://techglobal-training.com/__cypress/runner/cypress_runner.js:119070:21)\n    at wrapped (https://techglobal-training.com/__cypress/runner/cypress_runner.js:138021:19)\n    at <unknown> (https://techglobal-training.com/__cypress/runner/cypress_runner.js:143935:15)\n    at tryCatcher (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1807:23)\n--------------\nError: Stack Trace for original\n    at wrapMethod (https://techglobal-training.com/__cypress/runner/cypress_runner.js:54156:26)\n    at Function.stub (https://techglobal-training.com/__cypress/runner/cypress_runner.js:51270:44)\n    at Sandbox.stub (https://techglobal-training.com/__cypress/runner/cypress_runner.js:44852:37)\n    at Context.stub (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118072:32)\n    at cy.<computed> [as stub] (https://techglobal-training.com/__cypress/runner/cypress_runner.js:137997:17)\n    at getRet (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118808:20)\n    at tryCatcher (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise.attempt.Promise.try (https://techglobal-training.com/__cypress/runner/cypress_runner.js:4315:29)\n    at Context.thenFn (https://techglobal-training.com/__cypress/runner/cypress_runner.js:118819:66)\n    at Context.then (https://techglobal-training.com/__cypress/runner/cypress_runner.js:119070:21)\n    at wrapped (https://techglobal-training.com/__cypress/runner/cypress_runner.js:138021:19)\n    at <unknown> (https://techglobal-training.com/__cypress/runner/cypress_runner.js:143935:15)\n    at tryCatcher (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromiseCtx (https://techglobal-training.com/__cypress/runner/cypress_runner.js:1613:10)\n    at _drainQueueStep (https://techglobal-training.com/__cypress/runner/cypress_runner.js:2411:12)\n    at _drainQueue (https://techglobal-training.com/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (https://techglobal-training.com/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (https://techglobal-training.com/__cypress/runner/cypress_runner.js:2286:14)",
+                "diff": null
+              },
+              "uuid": "580e1329-0ed4-49d8-8e5a-c1c1f3e52496",
+              "parentUUID": "6de5797b-81c6-4ba1-b22e-aa31a34ce211",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "17a94354-4bf6-4d87-a1eb-b7a82a5f5a1e",
+            "05e6d1d4-ecfc-4f6b-98e5-3f304b20b9e8"
+          ],
+          "failures": [
+            "580e1329-0ed4-49d8-8e5a-c1c1f3e52496"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10365,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
